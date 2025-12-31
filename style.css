@@ -1,0 +1,96 @@
+:root {
+  --bg: #f3e8ff;
+  --card: #ffffff;
+  --primary: #9d4edd;
+  --secondary: #cdb4db;
+  --aprobado: #b8f2c2;
+  --bloqueado: #e6dff1;
+  --text: #2d2d2d;
+}
+
+body.dark {
+  --bg: #1e1b2e;
+  --card: #2a2540;
+  --primary: #c77dff;
+  --secondary: #5a4a78;
+  --text: #f1f1f1;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  transition: 0.3s;
+}
+
+#modoBtn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
+.malla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+}
+
+.ciclo {
+  background: var(--card);
+  padding: 15px;
+  border-radius: 14px;
+}
+
+.ciclo h2 {
+  background: var(--secondary);
+  text-align: center;
+  border-radius: 10px;
+}
+
+.avance {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.curso {
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  background: var(--bg);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.curso.aprobado {
+  background: var(--aprobado);
+  font-weight: 600;
+}
+
+.curso.bloqueado {
+  background: var(--bloqueado);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.curso.desbloqueado {
+  animation: aparecer 0.4s ease-out;
+}
+
+@keyframes aparecer {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
